@@ -26,3 +26,4 @@ C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPo
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPoc.csproj.CoreCompileInputs.cache
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPoc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll

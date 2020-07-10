@@ -48,6 +48,10 @@
             "Azure.Security.KeyVault.Secrets": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             }
           },
           "imports": [
