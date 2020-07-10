@@ -23,3 +23,6 @@ C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\Microsoft.
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPoc.csproj.CopyComplete
+C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\bin\Debug\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll
+C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPoc.csproj.CoreCompileInputs.cache
+C:\Users\E274\Desktop\KeyVaultPoc\KeyVaultPoc\obj\Debug\netcoreapp3.1\KeyVaultPoc.MvcApplicationPartsAssemblyInfo.cache
