@@ -13,9 +13,9 @@ namespace KeyVaultPoc
 {
     public class Startup
     {
-        protected IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
-        protected SecretClient _secretClient { get; set; }
+        private SecretClient SecretClient { get; set; }
 
         public Startup(IConfiguration configuration)
         {
@@ -26,21 +26,17 @@ namespace KeyVaultPoc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            SecretClientOptions options = new SecretClientOptions()
-            {
-                Retry = {
-                    Delay= TimeSpan.FromSeconds(2),
-                    MaxDelay = TimeSpan.FromSeconds(16),
-                    MaxRetries = 5,
-                    Mode = RetryMode.Exponential
-                }
-            };
-
             TokenCredential credential = new DefaultAzureCredential();
 #if DEBUG
-            credential = new ClientSecretCredential(Configuration["AZURE_TENANT_ID"], Configuration["AZURE_CLIENT_ID"], Configuration["AZURE_CLIENT_SECRET"]);
+            // dotnet user-secrets
+            string tenantId = Configuration["AZURE_TENANT_ID"];
+            string clientId = Configuration["AZURE_CLIENT_ID"];
+            string clientSecret = Configuration["AZURE_CLIENT_SECRET"];
+            credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
 #endif
-            _secretClient = new SecretClient(new Uri(Configuration.GetValue<string>("KeyVaultSettings:Url")), credential, options);
+            // appsettings.json
+            string keyVaultUrl = Configuration["KeyVaultSettings:Url"];
+            SecretClient = new SecretClient(new Uri(keyVaultUrl), credential);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,13 +46,9 @@ namespace KeyVaultPoc
             {
                 app.UseDeveloperExceptionPage();
             }
-
             app.UseRouting();
 
-
-
-            KeyVaultSecret secret = _secretClient.GetSecret("TestKey");
-
+            KeyVaultSecret secret = SecretClient.GetSecret("TestKey");
             string secretValue = secret.Value;
 
             app.UseEndpoints(endpoints =>
